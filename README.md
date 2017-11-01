@@ -23,4 +23,30 @@ Also, briefly elaborate on your solution, architecture details, choice of patter
 
 Fork this repository and submit your code.
 
- 
+## Development environment 
+
+* Java (1.7)
+* Maven (3.5.0)
+* Eclipse (or any IDE or text editor you want)
+
+## How to run it local
+
+```bash
+git clone 'git@github.com:gmartim/ifood-backend-advanced-test.git'
+cd ifood-backend-advanced-test
+mvn clean package
+java -jar target/ifood-backend-advanced-test-0.0.1-SNAPSHOT.jar
+
+```
+
+You can validate its health running:
+
+```bash
+curl 'http://localhost:8080/health'
+```
+
+If everything is running fine, you shall see a response like:
+
+```javascript
+{"status":"UP"}
+```
