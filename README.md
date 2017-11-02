@@ -70,3 +70,7 @@ If everything is running fine, you shall see a response like:
 ### Bluemix
 
 It is a Platform as a Service (PaaS), besides others implementations, that offers a high availability and high performance environment, if can be easily scalable, horizontally and vertically. 
+
+### API
+
+API's documentation is automatically generated using Swagger. You can check it opening [Swagger UI](http://localhost:8080/swagger-ui.html) on your browser.
