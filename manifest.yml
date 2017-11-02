@@ -1,0 +1,8 @@
+---
+applications:
+- buildpack: java_buildpack
+  host: ifood-suggestion
+  name: ifood-suggestion
+  memory: 512M
+  path: target/ifood-backend-advanced-test-0.0.1-SNAPSHOT.jar
+  stack: cflinuxfs2

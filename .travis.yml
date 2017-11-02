@@ -3,5 +3,11 @@ language: java
 script:
   - mvn clean test package
 
-after_success:
-  - ls -ltr *
+deploy:
+  provider: bluemixcloudfoundry
+  skip_cleanup: true
+  manifest: manifest.yml
+  username: $BLUEMIX_USERNAME
+  password: $BLUEMIX_PASSWORD
+  organization: mmfconsulting.com.br
+  space: dev
