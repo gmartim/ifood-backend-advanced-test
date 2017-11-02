@@ -1,0 +1,7 @@
+language: java
+
+script:
+  - mvn clean test package
+
+after_success:
+  - ls -ltr *
