@@ -66,3 +66,7 @@ If everything is running fine, you shall see a response like:
 ```javascript
 {"status":"UP"}
 ```
+
+### Bluemix
+
+It is a Platform as a Service (PaaS), besides others implementations, that offers a high availability and high performance environment, if can be easily scalable, horizontally and vertically. 
