@@ -50,3 +50,19 @@ If everything is running fine, you shall see a response like:
 ```javascript
 {"status":"UP"}
 ```
+
+### CI
+
+Continuous integration is set, using Travis CI for building and Bluemix for deploying.
+
+If you want to validate the application's health on Bluemix you can run:
+
+```bash
+curl 'https://ifood-suggestion.mybluemix.net/health'
+```
+
+If everything is running fine, you shall see a response like:
+
+```javascript
+{"status":"UP"}
+```
