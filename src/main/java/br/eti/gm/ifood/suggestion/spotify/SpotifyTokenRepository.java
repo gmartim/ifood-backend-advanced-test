@@ -57,13 +57,13 @@ public class SpotifyTokenRepository extends AbstractSpotifyRepository {
 
 		encodedAuthorizationValue = getEncodedAuthorizationValue();
 
+		logger.debug("encodedAuthorizationValue: {}", encodedAuthorizationValue);
+
 		MultiValueMap<String, String> headers;
 
 		headers = new LinkedMultiValueMap<String, String>();
 		headers.add(Constant.AUTHORIZATION,
 				StringUtils.join(Constant.BASIC, Constant.SPACE, encodedAuthorizationValue));
-
-		logger.debug("encodedAuthorizationValue: {}", encodedAuthorizationValue);
 
 		HttpEntity<MultiValueMap<String, String>> requestEntity;
 

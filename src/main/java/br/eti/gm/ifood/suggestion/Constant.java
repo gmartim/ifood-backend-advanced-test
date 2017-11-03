@@ -9,6 +9,7 @@ public class Constant {
 	public static final String AUTHORIZATION = "Authorization";
 	public static final String CLIENT_CREDENTIALS = "client_credentials";
 	public static final String GRANT_TYPE = "grant_type";
+	public static final String BEARER = "Bearer";
 
 	public static final String ERROR_CODE_BAD_REQUEST = "001";
 
