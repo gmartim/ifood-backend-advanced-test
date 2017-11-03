@@ -15,24 +15,24 @@ import br.eti.gm.ifood.suggestion.Constant;
 import br.eti.gm.ifood.suggestion.SuggestionException;
 
 @Component
-public class OpenWeatherRepository {
+public class OpenWeatherWeatherRepository {
 
 	private final Logger logger;
 
-	@Value("${openWeather.api.service.cityName}")
+	@Value("${openWeather.api.weather.service.cityName}")
 	private String serviceCityName;
 
-	@Value("${openWeather.api.service.latAndLon}")
+	@Value("${openWeather.api.weather.service.latAndLon}")
 	private String serviceLatAndLon;
 
 	@Autowired
 	private RestTemplate restTemplate;
 
-	public OpenWeatherRepository() {
+	public OpenWeatherWeatherRepository() {
 		logger = LoggerFactory.getLogger(this.getClass());
 	}
 
-	public OpenWeatherResponse findByCityName(String cityName) throws SuggestionException {
+	public OpenWeatherWeatherResponse findByCityName(String cityName) throws SuggestionException {
 		logger.debug("Started findByCityName {}", cityName);
 
 		String url;
@@ -41,10 +41,10 @@ public class OpenWeatherRepository {
 
 		logger.debug("url: {}", url);
 
-		ResponseEntity<OpenWeatherResponse> responseEntity;
+		ResponseEntity<OpenWeatherWeatherResponse> responseEntity;
 
 		try {
-			responseEntity = restTemplate.getForEntity(url, OpenWeatherResponse.class);
+			responseEntity = restTemplate.getForEntity(url, OpenWeatherWeatherResponse.class);
 		} catch (Exception exception) {
 			throw new SuggestionException("Error getting entity from OpenWeather", exception);
 		}
@@ -54,7 +54,7 @@ public class OpenWeatherRepository {
 		return responseEntity.getBody();
 	}
 
-	public OpenWeatherResponse findByCityNameAndCountryCode(String cityName, String countryCode)
+	public OpenWeatherWeatherResponse findByCityNameAndCountryCode(String cityName, String countryCode)
 			throws SuggestionException {
 		logger.debug("Started findByCityNameAndCountryCode {} {}", cityName, countryCode);
 
@@ -65,7 +65,7 @@ public class OpenWeatherRepository {
 		return findByCityName(cityNameAndCountryCode);
 	}
 
-	public OpenWeatherResponse findByLatAndLog(Double lat, Double lon) throws SuggestionException {
+	public OpenWeatherWeatherResponse findByLatAndLog(Double lat, Double lon) throws SuggestionException {
 		logger.debug("Started findByLatAndLon {}", lat, lon);
 
 		String url;
@@ -74,10 +74,10 @@ public class OpenWeatherRepository {
 
 		logger.debug("url: {}", url);
 
-		ResponseEntity<OpenWeatherResponse> responseEntity;
+		ResponseEntity<OpenWeatherWeatherResponse> responseEntity;
 
 		try {
-			responseEntity = restTemplate.getForEntity(url, OpenWeatherResponse.class);
+			responseEntity = restTemplate.getForEntity(url, OpenWeatherWeatherResponse.class);
 		} catch (Exception exception) {
 			throw new SuggestionException("Error getting entity from OpenWeather", exception);
 		}

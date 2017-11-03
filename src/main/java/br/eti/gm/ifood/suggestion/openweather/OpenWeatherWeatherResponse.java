@@ -3,7 +3,7 @@ package br.eti.gm.ifood.suggestion.openweather;
 import br.eti.gm.ifood.suggestion.openweather.response.Coord;
 import br.eti.gm.ifood.suggestion.openweather.response.Main;
 
-public class OpenWeatherResponse {
+public class OpenWeatherWeatherResponse {
 
 	private Coord coord;
 

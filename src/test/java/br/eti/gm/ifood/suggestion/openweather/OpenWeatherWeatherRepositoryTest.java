@@ -15,37 +15,37 @@ import br.eti.gm.ifood.suggestion.openweather.response.Coord;
 import br.eti.gm.ifood.suggestion.openweather.response.Main;
 
 @RunWith(SpringRunner.class)
-@Import({ OpenWeatherRepository.class, RestTemplate.class })
+@Import({ OpenWeatherWeatherRepository.class, RestTemplate.class })
 @PropertySource("classpath:application.properties")
-public class OpenWeatherRepositoryTest {
+public class OpenWeatherWeatherRepositoryTest {
 
 	@Autowired
-	private OpenWeatherRepository openWeatherRepository;
+	private OpenWeatherWeatherRepository openWeatherWeatherRepository;
 
 	@Before
 	public void before() {
-		Assert.assertNotNull("openWeatherRepository is null", openWeatherRepository);
+		Assert.assertNotNull("openWeatherWeatherRepository is null", openWeatherWeatherRepository);
 	}
 
 	@Test
 	public void testFindByCityNameAndCountryCode() {
-		OpenWeatherResponse openWeatherResponse;
+		OpenWeatherWeatherResponse openWeatherWeatherResponse;
 
 		Coord coord;
 
 		Main main;
 
 		try {
-			openWeatherResponse = openWeatherRepository.findByCityNameAndCountryCode("Piracicaba", "br");
+			openWeatherWeatherResponse = openWeatherWeatherRepository.findByCityNameAndCountryCode("Piracicaba", "br");
 		} catch (SuggestionException exception) {
 			Assert.fail("Error finding by city name and country code");
 
 			return;
 		}
 
-		Assert.assertNotNull("openWeatherResponse is null", openWeatherResponse);
+		Assert.assertNotNull("openWeatherWeatherResponse is null", openWeatherWeatherResponse);
 
-		coord = openWeatherResponse.getCoord();
+		coord = openWeatherWeatherResponse.getCoord();
 
 		Assert.assertNotNull("coord is null", coord);
 		Assert.assertNotNull("coor.lat is null", coord.getLat());
@@ -53,7 +53,7 @@ public class OpenWeatherRepositoryTest {
 		Assert.assertEquals("coord.lat is not equals", new Double("-22.73"), coord.getLat());
 		Assert.assertEquals("coord.lon is not equals", new Double("-47.65"), coord.getLon());
 
-		main = openWeatherResponse.getMain();
+		main = openWeatherWeatherResponse.getMain();
 
 		Assert.assertNotNull("main is null", main);
 		Assert.assertNotNull("main.temp is null", main.getTemp());
@@ -61,16 +61,16 @@ public class OpenWeatherRepositoryTest {
 		Assert.assertTrue("main.temp is not greater than zero", (main.getTemp() > 1));
 
 		try {
-			openWeatherResponse = openWeatherRepository.findByCityName("Piracicaba");
+			openWeatherWeatherResponse = openWeatherWeatherRepository.findByCityName("Piracicaba");
 		} catch (SuggestionException exception) {
 			Assert.fail("Error finding by city name");
 
 			return;
 		}
 
-		Assert.assertNotNull("openWeatherResponse is null", openWeatherResponse);
+		Assert.assertNotNull("openWeatherWeatherResponse is null", openWeatherWeatherResponse);
 
-		coord = openWeatherResponse.getCoord();
+		coord = openWeatherWeatherResponse.getCoord();
 
 		Assert.assertNotNull("coord is null", coord);
 		Assert.assertNotNull("coord.lat is null", coord.getLat());
@@ -81,23 +81,23 @@ public class OpenWeatherRepositoryTest {
 
 	@Test
 	public void testFindByLatAndLog() {
-		OpenWeatherResponse openWeatherResponse;
+		OpenWeatherWeatherResponse openWeatherWeatherResponse;
 
 		Coord coord;
 
 		Main main;
 
 		try {
-			openWeatherResponse = openWeatherRepository.findByLatAndLog((double) -22.73, (double) -47.65);
+			openWeatherWeatherResponse = openWeatherWeatherRepository.findByLatAndLog((double) -22.73, (double) -47.65);
 		} catch (SuggestionException exception) {
 			Assert.fail("Error finding by city name and country code");
 
 			return;
 		}
 
-		Assert.assertNotNull("openWeatherResponse is null", openWeatherResponse);
+		Assert.assertNotNull("openWeatherWeatherResponse is null", openWeatherWeatherResponse);
 
-		coord = openWeatherResponse.getCoord();
+		coord = openWeatherWeatherResponse.getCoord();
 
 		Assert.assertNotNull("coord is null", coord);
 		Assert.assertNotNull("coor.lat is null", coord.getLat());
@@ -105,7 +105,7 @@ public class OpenWeatherRepositoryTest {
 		Assert.assertEquals("coord.lat is not equals", new Double("-22.73"), coord.getLat());
 		Assert.assertEquals("coord.lon is not equals", new Double("-47.65"), coord.getLon());
 
-		main = openWeatherResponse.getMain();
+		main = openWeatherWeatherResponse.getMain();
 
 		Assert.assertNotNull("main is null", main);
 		Assert.assertNotNull("main.temp is null", main.getTemp());
