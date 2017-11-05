@@ -42,7 +42,7 @@ java -jar target/ifood-backend-advanced-test-0.0.1-SNAPSHOT.jar
 You can validate its health running:
 
 ```bash
-curl 'http://localhost:8080/health'
+curl 'http://localhost:8080/actuator/health'
 ```
 
 If everything is running fine, you shall see a response like:
@@ -58,7 +58,7 @@ Continuous integration is set, using Travis CI for building and Bluemix for depl
 If you want to validate the application's health on Bluemix you can run:
 
 ```bash
-curl 'https://ifood-suggestion.mybluemix.net/health'
+curl 'https://ifood-suggestion.mybluemix.net/actuator/health'
 ```
 
 If everything is running fine, you shall see a response like:
@@ -69,11 +69,13 @@ If everything is running fine, you shall see a response like:
 
 ## Bluemix
 
-It is a Platform as a Service (PaaS), besides others implementations, that offers a high availability and high performance environment, if can be easily scalable, horizontally and vertically. 
+It is a Platform as a Service (PaaS), besides others implementations, that offers a high availability and high performance environment, if can be easily scalable, horizontally and vertically.
+
+Bluemix can be configured to achieve the requirements to be fault tolerant, responsive and resilient.
 
 ## API
 
-API's documentation is automatically generated using Swagger. You can check it opening [Swagger UI](http://localhost:8080/swagger-ui.html) on your browser.
+API's documentation is automatically generated using Swagger. You can check it opening [Swagger UI](https://ifood-suggestion.mybluemix.net/swagger-ui.html) on your browser.
 
 ## API's request examples
 
