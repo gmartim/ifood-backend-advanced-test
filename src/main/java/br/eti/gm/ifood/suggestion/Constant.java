@@ -10,10 +10,13 @@ public class Constant {
 	public static final String CLIENT_CREDENTIALS = "client_credentials";
 	public static final String GRANT_TYPE = "grant_type";
 	public static final String BEARER = "Bearer";
+	public static final String MESSAGE = "message";
 
 	public static final String ERROR_CODE_BAD_REQUEST = "001";
+	public static final String ERROR_CODE_INTERNAL_SERVER_ERROR = "002";
 
 	public static final String ERROR_REASON_INVALID_FIELD = "001";
+	public static final String ERROR_REASON_SERVICE_FAILED = "002";
 
 	public static final String ERROR_FIELD_BLANK = "may not be blank";
 	public static final String ERROR_FIELD_SIZE = "size must be between %d and %d";

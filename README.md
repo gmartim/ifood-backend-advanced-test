@@ -51,7 +51,7 @@ If everything is running fine, you shall see a response like:
 {"status":"UP"}
 ```
 
-### CI
+## CI
 
 Continuous integration is set, using Travis CI for building and Bluemix for deploying.
 
@@ -67,10 +67,22 @@ If everything is running fine, you shall see a response like:
 {"status":"UP"}
 ```
 
-### Bluemix
+## Bluemix
 
 It is a Platform as a Service (PaaS), besides others implementations, that offers a high availability and high performance environment, if can be easily scalable, horizontally and vertically. 
 
-### API
+## API
 
 API's documentation is automatically generated using Swagger. You can check it opening [Swagger UI](http://localhost:8080/swagger-ui.html) on your browser.
+
+## API's request examples
+
+[Using piracicaba as city name and br as country code](https://ifood-suggestion.mybluemix.net/api/playlist/weather/city/piracicaba?countryCode=br)
+
+[Using piracicaba as city name](https://ifood-suggestion.mybluemix.net/api/playlist/weather/city/piracicaba)
+
+[Using moscow as city name and ru as country code](https://ifood-suggestion.mybluemix.net/api/playlist/weather/city/moscow?countryCode=ru)
+
+[Using moscow as city name](https://ifood-suggestion.mybluemix.net/api/playlist/weather/city/moscow)
+
+[Using Piracicaba's latitude and longitude](https://ifood-suggestion.mybluemix.net/api/playlist/weather/lat/-22.73/lon/-47.65)

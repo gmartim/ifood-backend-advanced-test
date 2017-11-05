@@ -35,13 +35,17 @@ public class Error {
 		return new DefaultErrorBuilder(Constant.ERROR_CODE_BAD_REQUEST, Constant.ERROR_REASON_INVALID_FIELD);
 	}
 
+	public static ErrorBuilder serviceFailed() {
+		return new DefaultErrorBuilder(Constant.ERROR_CODE_INTERNAL_SERVER_ERROR, Constant.ERROR_REASON_SERVICE_FAILED);
+	}
+
 	public interface ErrorBuilder {
 
 		ErrorBuilder fieldBlank(String fieldName);
 
 		ErrorBuilder fieldSize(String fieldName, int min, int max);
 
-		ErrorBuilder invalidField();
+		ErrorBuilder message(String message);
 
 		Error build();
 
@@ -76,15 +80,15 @@ public class Error {
 		}
 
 		@Override
-		public DefaultErrorBuilder invalidField() {
-			this.reason = Constant.ERROR_REASON_INVALID_FIELD;
-
-			return this;
+		public Error build() {
+			return new Error(code, reason, details);
 		}
 
 		@Override
-		public Error build() {
-			return new Error(code, reason, details);
+		public ErrorBuilder message(String message) {
+			details.put(Constant.MESSAGE, message);
+
+			return this;
 		}
 
 	}

@@ -9,6 +9,8 @@ public class OpenWeatherWeatherResponse {
 
 	private Main main;
 
+	private String name;
+
 	public Coord getCoord() {
 		return coord;
 	}
@@ -23,6 +25,14 @@ public class OpenWeatherWeatherResponse {
 
 	public void setMain(Main main) {
 		this.main = main;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }
